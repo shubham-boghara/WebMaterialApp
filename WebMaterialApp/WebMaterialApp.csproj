@@ -2035,6 +2035,8 @@
     <Content Include="Content\plugins\uplot\uPlot.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Temp\copy.txt" />
+    <Content Include="Temp\section.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2063,6 +2065,7 @@
     <Compile Include="Models\Mst_WebAdmins.cs" />
     <Compile Include="Models\WebModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Vw_Admin_Users.cs" />
     <Compile Include="ViewModels\Vw_Mst_Admin_Routes.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2209,6 +2212,7 @@
     <Content Include="Views\AdminPortalLogin\Index.cshtml" />
     <Content Include="Views\Shared\_SiteLoginLayout.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\AdminUsers\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2218,8 +2222,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="DBCK\" />
+    <Folder Include="SqlScripts\" />
     <Folder Include="Views\AdminRouts\" />
-    <Folder Include="Views\AdminUsers\" />
     <Folder Include="Views\SiteUsers\" />
     <Folder Include="Views\UserAndRole\" />
   </ItemGroup>
