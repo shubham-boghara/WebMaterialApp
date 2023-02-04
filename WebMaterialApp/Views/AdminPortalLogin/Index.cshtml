@@ -1,0 +1,59 @@
+﻿@model WebMaterialApp.Models.Mst_WebAdmins
+@{
+    ViewBag.Title = "Admin-Portal-Login";
+    Layout = "~/Views/Shared/_AdminLoginLayout.cshtml";
+
+
+    string RedirectTo = "";
+    if(ViewBag.RedirectTo != null)
+    {
+        RedirectTo = ViewBag.RedirectTo.ToString();
+    }
+}
+
+<div class="login-box">
+    <div class="login-logo">
+        <a href="../../index2.html"><b>Admin</b>Portal</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="card-body login-card-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+            <p class="login-box-msg" style="color:firebrick;">@Html.ValidationMessage("model_error")</p>
+            
+            @using (Html.BeginForm("Index", "AdminPortalLogin"))
+            {
+
+                @Html.HiddenFor(m => m.Web_Admin_Id, "0")
+                @Html.Hidden("RedirectTo", RedirectTo)
+
+                <div class="input-group mb-3">
+                    @Html.TextBoxFor(m => m.UserName, "", new { @class = "form-control", @placeholder = "UserName" })
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    @Html.TextBoxFor(m => m.Password, "", new { @class = "form-control", @type = "password", @placeholder = "Password" })
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- /.col -->
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            }
+
+        </div>
+        <!-- /.login-card-body -->
+    </div>
+</div>
+
