@@ -4,8 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace WebMaterialApp.Controllers
-{
+namespace WebMaterialApp.Controllers { 
     public class SiteUsersController : Controller
     {
         // GET: SiteUsers
