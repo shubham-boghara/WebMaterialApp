@@ -20,6 +20,7 @@ namespace WebMaterialApp.Models
         public virtual DbSet<Mst_Exceptions> Mst_Exceptions { get; set; }
         public virtual DbSet<Mst_AdminRoutes> Mst_AdminRouts { get; set; }
 
+        public virtual DbSet<Vw_Mst_WebAdmins> Vw_Mst_WebAdmins { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }

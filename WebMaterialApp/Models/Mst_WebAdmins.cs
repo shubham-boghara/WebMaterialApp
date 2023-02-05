@@ -13,7 +13,7 @@ namespace WebMaterialApp.Models
 
         public string UserName { get; set; }
 
-        public string LsatName { get; set; }
+        public string LastName { get; set; }
 
         public string Email { get; set; }
 
@@ -25,7 +25,7 @@ namespace WebMaterialApp.Models
 
         public DateTime? CreatedOn { get; set; }
 
-        public int? CretatedBy { get; set; }
+        public int? CreatedBy { get; set; }
 
         public DateTime? UpdatedOn { get; set; }
 
