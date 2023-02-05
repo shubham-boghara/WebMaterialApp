@@ -9,6 +9,7 @@ using WebMaterialApp.ViewModels;
 
 namespace WebMaterialApp.Controllers
 {
+    [AdminSessionTimeOut]
     public class AdminUsersController : Controller
     {
         WebModel DB = new WebModel();
@@ -24,7 +25,10 @@ namespace WebMaterialApp.Controllers
                 var Get_AdminUser = DB.Mst_WebAdmins.SingleOrDefault(m => m.Web_Admin_Id == id);
                 if(Get_AdminUser != null)
                 {
+                    Get_AdminUser.Password = Helper.Decrypt(Get_AdminUser.Password);
                     vw_Admin_Users.AdminUser = Get_AdminUser;
+
+                    
                     return View(vw_Admin_Users);
                 }
                 else
@@ -42,10 +46,11 @@ namespace WebMaterialApp.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
+               /* if (ModelState.IsValid)
+                {*/
                     if(vw_Admin_Users.AdminUser.Web_Admin_Id == 0)
                     {
+                        vw_Admin_Users.AdminUser.Password = Helper.Encrypt(vw_Admin_Users.AdminUser.Password);
                         vw_Admin_Users.AdminUser.CreatedOn = DateTime.Now;
                         vw_Admin_Users.AdminUser.CreatedBy = int.Parse(Session["UserId"].ToString());
                         DB.Mst_WebAdmins.Add(vw_Admin_Users.AdminUser);
@@ -76,7 +81,7 @@ namespace WebMaterialApp.Controllers
                     }
                   
                     return RedirectToAction("Index", "AdminUsers");
-                }
+               /* }*/
             }catch(Exception ex)
             {
                 Helper.SaveException(ex, "AdminUsersController/Index");

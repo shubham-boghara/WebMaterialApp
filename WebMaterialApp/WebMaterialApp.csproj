@@ -2063,6 +2063,7 @@
     <Compile Include="Models\Mst_Roles.cs" />
     <Compile Include="Models\Mst_Users.cs" />
     <Compile Include="Models\Mst_WebAdmins.cs" />
+    <Compile Include="Models\Vw_Mst_WebAdmins.cs" />
     <Compile Include="Models\WebModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Vw_Admin_Users.cs" />
