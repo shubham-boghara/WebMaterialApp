@@ -2224,6 +2224,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="DBCK\" />
+    <Folder Include="DLL\" />
     <Folder Include="SqlScripts\" />
     <Folder Include="Views\AdminRouts\" />
     <Folder Include="Views\SiteUsers\" />
